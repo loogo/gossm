@@ -5,10 +5,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/ssimunic/gossm/dial"
-	"github.com/ssimunic/gossm/logger"
-	"github.com/ssimunic/gossm/notify"
-	"github.com/ssimunic/gossm/track"
+	"github.com/loogo/gossm/dial"
+	"github.com/loogo/gossm/logger"
+	"github.com/loogo/gossm/notify"
+	"github.com/loogo/gossm/track"
 )
 
 type Monitor struct {
@@ -71,6 +71,13 @@ func (m *Monitor) initialize() {
 			server.CheckInterval = m.config.Settings.Monitor.CheckInterval
 		case server.Timeout <= 0:
 			server.Timeout = m.config.Settings.Monitor.Timeout
+		}
+		if server.Timeout <= 0 {
+			server.Timeout = m.config.Settings.Monitor.Timeout
+		}
+
+		if server.Protocol == "" {
+			server.Protocol = "tcp"
 		}
 	}
 }

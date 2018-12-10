@@ -3,7 +3,7 @@ package gossm
 import (
 	"encoding/json"
 
-	"github.com/ssimunic/gossm/validate"
+	"github.com/loogo/gossm/validate"
 )
 
 type Config struct {

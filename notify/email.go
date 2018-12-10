@@ -58,7 +58,7 @@ func (e *EmailNotifier) Notify(text string) error {
 	formattedReceipets := strings.Join(e.Settings.To, ", ")
 	msg := "From: " + e.Settings.From + "\n" +
 		"To: " + formattedReceipets + "\n" +
-		"Subject: GOSSM Notification\n\n" +
+		"Subject: Server Error Notification\n\n" +
 		text + " not reached."
 
 	err := smtp.SendMail(

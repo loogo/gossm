@@ -72,8 +72,8 @@ func (s *Server) Validate() error {
 		return errServerProperty("ipAddress")
 	case s.Port == 0:
 		return errServerProperty("port")
-	case s.Protocol == "":
-		return errServerProperty("protocol")
+		//case s.Protocol == "":
+		//	return errServerProperty("protocol")
 	}
 	return nil
 }

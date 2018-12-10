@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"time"
 
-	"github.com/ssimunic/gossm"
-	"github.com/ssimunic/gossm/logger"
+	"github.com/loogo/gossm"
+	"github.com/loogo/gossm/logger"
 )
 
 var configPath = flag.String("config", "configs/default.json", "configuration file")

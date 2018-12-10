@@ -32,7 +32,12 @@ func NewServerStatusData(servers Servers) *ServerStatusData {
 func (s *ServerStatusData) SetStatusAtTimeForServer(server *Server, timeNow time.Time, status bool) {
 	s.rwmu.Lock()
 	defer s.rwmu.Unlock()
-	s.ServerStatus[server] = append(s.ServerStatus[server], &statusAtTime{Time: timeNow, Status: status})
+	le := len(s.ServerStatus[server])
+	if le >= 100 {
+		s.ServerStatus[server] = append(s.ServerStatus[server][1:], &statusAtTime{Time: timeNow, Status: status})
+	} else {
+		s.ServerStatus[server] = append(s.ServerStatus[server], &statusAtTime{Time: timeNow, Status: status})
+	}
 }
 
 func (s *ServerStatusData) GetServerStatus() map[*Server][]*statusAtTime {

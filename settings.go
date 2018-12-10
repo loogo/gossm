@@ -1,7 +1,7 @@
 package gossm
 
 import (
-	"github.com/ssimunic/gossm/notify"
+	"github.com/loogo/gossm/notify"
 )
 
 type Settings struct {

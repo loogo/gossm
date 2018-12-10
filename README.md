@@ -16,8 +16,8 @@ gossm performs checks if servers can be reached every *t* seconds and notifies w
 Run from terminal:
 
 ```bash
-go get github.com/ssimunic/gossm/cmd/gossm
-go build github.com/ssimunic/gossm/cmd/gossm
+go get github.com/loogo/gossm/cmd/gossm
+go build github.com/loogo/gossm/cmd/gossm
 ./gossm -config configs/myconfig.json
 ```
 
